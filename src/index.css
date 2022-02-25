@@ -1,13 +1,180 @@
+/* Add in sparkly rain animation in the background, only for 600px + widths */
+
 body {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  font-family: 'Zen Kurenaido';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 1.75rem;
+  background: fixed center/cover no-repeat linear-gradient(to bottom, rgba(195, 235, 255, 0.8), rgba(255,225,255,.5)), url('../public/glitter.jpg');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Mansalva';
 }
+
+ul {
+  list-style: none;
+  margin: .5rem;
+  padding: 0;
+}
+
+li {
+  padding-bottom: .2rem;
+}
+
+li:nth-child(even) {
+  background: white;
+  border-radius: 20px;
+}
+
+.login,
+.weatherWidget,
+.main,
+input, 
+select, 
+button, 
+.nextToDo,
+.leftToDo {
+  box-shadow: 2px 2px 2px black;
+}
+
+.parent {
+  height: 95vh;
+}
+.top {
+  display: flex;
+}
+
+.header {
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+  font-size: 5rem;
+  margin: 0;
+  text-shadow: 2px 0 0 white, 0 2px 0 white, -2px 0 0 white, 0 -2px 0 white;
+}
+
+.weatherWidget {
+  margin: .5rem .5rem .5rem auto;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 20px;
+  width: 16rem;
+  padding: .25rem;
+  background: rgb(247, 227, 247);
+
+}
+
+.login {
+  margin: .5rem auto .5rem .5rem;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 20px;
+  width: 16rem;
+  padding: .25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(247, 227, 247);
+}
+
+.main {
+  margin: 2rem auto;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 50px;
+  width: 95vw;
+  max-width: 60rem;
+  background: lavender;
+}
+
+.entry {
+  max-width: 50rem;
+  margin: 2rem auto;
+}
+
+input:focus, select:focus {
+  outline: 4px solid lightcyan;
+  border: 2px solid rgb(247, 227, 247);
+  box-shadow: 6px 6px black;
+}
+
+.todosDisplay {
+  margin: 1rem auto;
+  display: flex;
+}
+
+.nextToDo, .leftToDo {
+  margin: 1rem auto;
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 20px;
+  max-width: 35rem;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}
+
+.leftToDo {
+  background: lightcyan;
+}
+
+.toDoInput {
+  margin-top: 1rem;
+  width: 25rem;
+  padding: .5rem;
+  border: 2px solid black;
+  border-radius: 20px;
+  font-family: 'Zen Kurenaido';
+  font-size: 1.5rem;
+}
+
+.priority {
+  margin: .75rem auto;
+  width: 3.25rem;
+  padding: .5rem;
+  border: 2px solid black;
+  border-radius: 20px;
+  font-family: 'Zen Kurenaido';
+  font-size: 1.5rem;
+}
+
+.button {
+  margin: .75rem auto;
+  width: 8rem;
+  padding: .5rem;
+  border: 2px solid black;
+  border-radius: 25px;
+  font-family: 'Zen Kurenaido';
+  font-size: 1.25rem;
+  background: rgb(247, 227, 247);
+  cursor: pointer;
+}
+
+.button:hover {
+  background: lightcyan;
+}
+
+.button:active {
+  background: rgb(48, 47, 47);
+  color: lightcyan;
+  box-shadow: -2px -2px black;
+}
+
+.trash {
+  background: transparent;
+  font-size: 1.25rem;
+  padding-top: 15px;
+  padding-bottom: 0;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  align-self: end;
+}
+
+/* Mobile: change width for widgets, to-do input & to-do list */
