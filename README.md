@@ -5,7 +5,6 @@ Going a little beyond a normal to-do app, this to-do app takes in both input and
 
 Progress can be saved with a login. 
 
-=> Need to add delete function
 
 => How to load to-dos from database/server?? Upon login state is initialized to the to-dos? 
 
