@@ -4,6 +4,7 @@ import "@fontsource/mansalva";
 import WeatherWidget from './app/components/Weather';
 import ToDos from './app/components/ToDos';
 import Login from './app/components/Login';
+import Quote from './app/components/zenQuotes';
 
 // Incorporate local storage into this one? 
 
@@ -20,6 +21,7 @@ function App() {
         </h1>
       </div>
         <ToDos />
+        <Quote />
     </div>
   );
 }

@@ -90,6 +90,7 @@ h1 {
   width: 95vw;
   max-width: 60rem;
   background: lavender;
+  padding-bottom: 5rem;
 }
 
 .entry {
@@ -175,6 +176,32 @@ input:focus, select:focus {
   box-shadow: none;
   cursor: pointer;
   align-self: end;
+}
+
+.todoAlert {
+  background: rgb(247, 227, 247);
+}
+
+.none {
+  display: none;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  background: black;
+  color: lavender;
+  text-align: center;
+  padding: .5rem;
+}
+
+footer .citation {
+  font-size: .75rem;
+}
+
+footer .citation a {
+  color: pink;
 }
 
 /* Mobile: change width for widgets, to-do input & to-do list */

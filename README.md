@@ -6,16 +6,22 @@ Going a little beyond a normal to-do app, this to-do app takes in both input and
 Progress can be saved with a login. 
 
 
-=> How to load to-dos from database/server?? Upon login state is initialized to the to-dos? 
+=> How to load to-dos from database/server using thunk?? Upon login state is initialized to the to-dos? 
 
 => Get API functionality with the weather widget set up first. 
 
-=> validation
+=> validation both client & server side
 
-=> server side API
+=> reset input field
+
+=> server side API proxy
 
 => database for saving the to-dos, username, password
 
 => authentication, JWT token
 
-=> add zenquotes with proxy ???? 
+=> remove package.json proxy before deploying, the proxy is just for development
+
+=> login component needs to be replaced with logout component if logged in (conditional render)
+
+=> Mobile responsive: stack login and weather, reduce footer font size, increase padding-bottom for main

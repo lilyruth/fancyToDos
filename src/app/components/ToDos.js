@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {useSelector, useDispatch } from 'react-redux';
 import { addToDo, deleteToDo } from '../../features/todoSlice';
 import { TiDeleteOutline } from 'react-icons/ti';
@@ -16,6 +16,7 @@ function ToDos() {
 
  let [newTodo, setNewTodo] = useState();
  let [todoPriority, setPriority] = useState();
+ let [alert, setAlert] = useState(false);
 
  // have unique ID ready for next addition
 
@@ -36,7 +37,8 @@ function ToDos() {
  
  let firstTodo = priorityTodo.item;
  let firstTodoId = priorityTodo.id;
-
+ 
+ // to-do list remaining items
  let list = remainingTodos.map(item => 
   <li key={item.id}>{item.item} 
     <button className="trash"
@@ -48,7 +50,17 @@ function ToDos() {
     </button>
   </li>
   )
-  
+
+// this keeps the page from disappearing if you delete the last to-do
+ let toDoAlert = document.getElementById('todoAlert');
+
+ // alert won't go away if I don't use useEffect to add it
+ useEffect(() => {
+  if (alert) {
+    toDoAlert.classList.remove('none');
+  }
+ }, [alert, toDoAlert])
+
  return (    
  
   <div className='main'>
@@ -76,11 +88,14 @@ function ToDos() {
             completed: false,
             priority: todoPriority
             })
-            )
-          console.log(listCopy)}
+            );
+          setAlert(false);
+          toDoAlert.classList.add('none');
+          }
         }
 
         >add to list</button>
+        <div id="todoAlert" className="todoAlert none">Please add another to-do before deleting any more.</div>
        </div>
    </div>
 
@@ -88,8 +103,12 @@ function ToDos() {
        <div className='nextToDo'>
          Up next: {firstTodo} 
          <button className="trash" onClick={() => {
-         dispatch(deleteToDo({id: firstTodoId}));
-         console.log(listCopy)
+           if (todoList.length === 1) {
+             setAlert(true); 
+           } else {
+            dispatch(deleteToDo({id: firstTodoId}));
+            console.log(listCopy)
+           }
          }}
        >
       <TiDeleteOutline />
